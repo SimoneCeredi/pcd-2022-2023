@@ -10,11 +10,11 @@ public class TestCounter {
 
 	public static void main(String[] args) throws Exception {
 		int ntimes = 10000;
-		Counter c = new Counter(0,1);
-		WorkerA w1a = new WorkerA(c,ntimes);
-		WorkerA w1b = new WorkerA(c,ntimes);
-		WorkerB w2a = new WorkerB(c,ntimes);
-		WorkerB w2b = new WorkerB(c,ntimes);
+		Counter c = new Counter(0, 1);
+		WorkerA w1a = new WorkerA(c, ntimes);
+		WorkerA w1b = new WorkerA(c, ntimes);
+		WorkerB w2a = new WorkerB(c, ntimes);
+		WorkerB w2b = new WorkerB(c, ntimes);
 		w1a.start();
 		w1b.start();
 		w2a.start();
@@ -23,6 +23,6 @@ public class TestCounter {
 		w1b.join();
 		w2a.join();
 		w2b.join();
-		System.out.println("Counter final value: "+c.getValue());
+		System.out.println("Counter final value: " + c.getValue());
 	}
 }
