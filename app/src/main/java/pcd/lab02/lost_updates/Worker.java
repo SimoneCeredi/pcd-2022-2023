@@ -20,11 +20,7 @@ public class Worker extends Thread {
 
 	public void run() {
 		for (int i = 0; i < ntimes; i++) {
-			if (this.lock != null) {
-				synchronized (this.lock) {
-					counter.inc();
-				}
-			} else {
+			synchronized (this.lock) {
 				counter.inc();
 			}
 		}
